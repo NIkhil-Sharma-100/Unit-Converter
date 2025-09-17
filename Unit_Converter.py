@@ -1,33 +1,35 @@
 # Class contain all functions 
 class Unit_Conv:
-    def length(self,n,order):
-        if order == "meter":
-            return f"{n} km = {n*1000} m"
-        elif order == "kilometer":
+    def dis(self,n,from_unit):
+        if from_unit == "meter":
             return f"{n} m = {n/1000} km"
+        elif from_unit == "kilometer":
+            return f"{n} km = {n*1000} m"
         else:
-            print("Please Enter Valid Input")
+            return "Please Enter Valid Input"
 
-    def weight(self,n,order):
-        if order == "gram":
+    def weight(self,n,from_unit):
+        if from_unit == "gram":
+            return f"{n} g = {n/1000} kg"
+        elif from_unit == "kilogram":
             return f"{n} kg = {n*1000} g"
-        elif order == "kilometer":
-            return f"{n} kg = {n/1000} g"
         else:
-            print("Please Enter Valid Input")  
+            return "Please Enter Valid Input" 
 
-    def temp(self,n,order):
-        if order == "farenheit":
-            return f"{n} C = {(n*9/5)+32} F"
-        elif order == "celsius":
-            return f"{n} F = {(n-32)*5/9} C"
+    def temp(self,n,from_unit):
+        if from_unit == "fahrenheit":
+            return f"{n} °F = {(n-32)*5/9} °C"
+        elif from_unit == "celsius":
+            return f"{n} °C = {(n*9/5)+32} °F"
+        else:
+            return "Please Enter Valid Input"
 
 
 obj = Unit_Conv()                  
             
 # Task menu
 print("choose number which one do you want")
-print("1. Length    2. Weight   3.Temperature     0. Exit")    
+print("1. Distance   2. Weight   3.Temperature     0. Exit")    
 
 while True:
     # Error handling
@@ -37,14 +39,14 @@ while True:
 
         if user_choice == 1:
             while True:
-                order = input("In (meter/kilometer) or 0 to exit: ").strip().lower()
+                from_unit = input("\"meter/kilometer\" or 0 to exit: ").strip().lower()
                 
                 
-                if order  == "0":
+                if from_unit  == "0":
                     break
 
-                n = int(input("Enter convertable units : "))
-                result = obj.length(n,order)
+                n = int(input("Enter convertible units : "))
+                result = obj.dis(n,from_unit)
                 if result:
                     print(result)
                 else:    
@@ -52,14 +54,14 @@ while True:
 
         elif user_choice == 2:
             while True:
-                order = input("In (gram/kilogram) or 0 to exit: ").strip().lower()
+                from_unit = input("\"gram/kilogram\" or 0 to exit: ").strip().lower()
                     
 
-                if order  == "0":
+                if from_unit  == "0":
                     break
 
-                n = int(input("Enter convertable units : "))
-                result = obj.length(n,order)
+                n = int(input("Enter convertible units : "))
+                result = obj.weight(n,from_unit)
                 if result:
                     print(result)
                 else:
@@ -67,18 +69,18 @@ while True:
 
         elif user_choice == 3:
             while True:
-                order = input("In (celsius/fehrenheit) or 0 to exit : ").strip().lower()
+                from_unit = input("\"celsius/fahrenheit\" or 0 to exit : ").strip().lower()
 
 
-                if order  == "0":
+                if from_unit  == "0":
                     break
 
-                n = int(input("Enter convertable units : "))
-                result = obj.length(n,order)
+                n = int(input("Enter convertible units : "))
+                result = obj.temp(n,from_unit)
                 if result:
                     print(result)
                 else:
-                    print("Enter celsius/fehrenheit")    
+                    print("Enter celsius/fahrenheit")    
 
         elif user_choice == 0:
             break                            
@@ -89,13 +91,6 @@ while True:
 
     except ValueError as e:
         print("PLease enter valid integral input")                    
-
-
-
-
-
-
-
 
 
 
