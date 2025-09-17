@@ -9,12 +9,12 @@ Built using loops, classes, and error handling — a beginner-friendly project.
 
 ## Example Usage
 choose number which one do you want
-1. Distance   2. Weight   3. Temperature   0. Exit
+1. Distance   2. Weight   3. Temperature   0. Exit       
 
-Your choice : 1
-"meter/kilometer" or 0 to exit: meter
-Enter convertible units : 500
-500 m = 0.5 km
+Your choice : 1         
+"meter/kilometer" or 0 to exit: meter            
+Enter convertible units : 500         
+500 m = 0.5 km       
 
 ## Features
 
