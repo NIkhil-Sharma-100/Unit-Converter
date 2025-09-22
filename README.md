@@ -1,6 +1,6 @@
 # Unit Converter (Python)
 
-A **Python Unit Converter** that allows users to convert between  
+A simple **Python Unit Converter** that allows users to convert between  
 - Distance (meters ↔ kilometers)  
 - Weight (grams ↔ kilograms)  
 - Temperature (Celsius ↔ Fahrenheit)  
